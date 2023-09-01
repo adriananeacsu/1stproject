@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.security.auth.x500.X500Principal;
-
 public class MainPage {
 
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
@@ -62,6 +60,12 @@ public class MainPage {
     @FindBy(xpath = "/html/body/section[3]/div/div/div[3]/div/div/h3")
     private WebElement inPersonHeader;
 
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[4]/h3/button")
+    private WebElement HowDiISignUpText;
+
+    @FindBy(xpath = "//*[@id=\"learn-selenium\"]/div/div/div[1]/h2")
+    private WebElement learnSeleniumText;
+
 
 
 
@@ -96,16 +100,13 @@ public class MainPage {
 
     }
 
-    public void clickReadMoreFromLearnTheFundamentals(){
-        readMoreFromLearnTheFundamentals.click();
+    public void clickReadMoreFromTheFundamentals(){readMoreFromLearnTheFundamentals.click();}
+
+    public String getLearnTheFundamentalsText(){return learnTheFundamentalsText.getText();
     }
 
-    public String getLearnTheFundamentalsText(){
-        return learnTheFundamentalsText.getText();
-    }
-
-    public String getFrequentlyAskedQuestionsText(){
-        return frequentlyAskedQuestionsText.getText();
+    public WebElement getFrequentlyAskedQuestionsText(){
+        return frequentlyAskedQuestionsText;
     }
 
     public String getOurInstructorsText(){
@@ -125,5 +126,10 @@ public class MainPage {
 
     public WebElement getInPersonHeader(){return inPersonHeader;}
 
+    public WebElement getLearnSeleniumText(){return learnSeleniumText;}
+
+
+    public String getLEarnTheFundamentalsText() {return learnTheFundamentalsText.getText();
+    }
 }
 

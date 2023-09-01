@@ -6,6 +6,7 @@ import io.cucumber.java.en.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -144,7 +145,7 @@ public class StepDefinitions {
     }
 
     @When("I click Read More from learn the fundamentals")
-    public void click_readMore_from_read_the_fundamentals(){mainPAge.clickReadMoreFromLearnTheFundamentals();}
+    public void click_readMore_from_read_the_fundamentals(){mainPAge.clickReadMoreFromTheFundamentals();}
 
     @When("I click manual tester certificate from course options")
     public void click_manual_tester_certificate(){courseOptionsPage.setClickOnManualTesterCertificate();}
@@ -205,7 +206,17 @@ public class StepDefinitions {
 
 
 
+    @When("I click How do I sign up button")
+    public void clickHowDoISignUpButton(){
+        Utils.scrollToElement(driver, mainPAge.getFrequentlyAskedQuestionsText());
+        mainPAge.clickHowDoISignUpButton();
+    }
 
+    @When("I click read more from learn the fundamentals")
+    public void clickReadMoreFromLearnTheFundamentals(){
+        Utils.scrollToElement(driver, mainPAge.getLearnSeleniumText());
+        mainPAge.clickReadMoreFromTheFundamentals();
+    }
 
     @Given("I am on the main page")
     public void iAmOnTheMainPage() {
@@ -306,7 +317,7 @@ public class StepDefinitions {
 
     @Then("the page goes down to learn the fundamentals")
     public void thePageGoesDownToLearnTheFundamentals() {
-        Assertions.assertEquals("Learn The Fundamentals", mainPAge.getLearnTheFundamentalsText());
+        Assertions.assertEquals("Learn The Fundamentals", mainPAge.getLEarnTheFundamentalsText());
     }
 
 

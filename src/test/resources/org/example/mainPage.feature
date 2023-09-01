@@ -64,7 +64,7 @@ Feature: Main Page
 
   Scenario: How do I sign up button
     Given I am on the main page
-    When I Click the how do I sign up button
+    When I click How do I sign up button
 
 
   Scenario: positive: input all fields on register page
@@ -134,7 +134,8 @@ Feature: Main Page
   Scenario: click read more from learn the fundamentals
     Given I am on the main page
     When I click Read More from learn the fundamentals
-    Then the "Fundamentals" page opens
+    Then the "fundamentals" page opens
+
 
   Scenario: click on software tester certificate
     Given I am on the Course Options Page
